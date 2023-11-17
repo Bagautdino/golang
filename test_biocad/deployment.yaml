@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: biocadtest
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: biocadtest
+  template:
+    metadata:
+      labels:
+        app: biocadtest
+    spec:
+      containers:
+      - name: biocadtest
+        image: ayvazbudapeshtov/biocadtest:latest
+        ports:
+        - containerPort: 32777
