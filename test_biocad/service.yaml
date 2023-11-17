@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: biocadtest-service
+spec:
+  type: NodePort
+  selector:
+    app: biocadtest
+  ports:
+    - port: 32777
+      targetPort: 32777
+      nodePort: 30007
